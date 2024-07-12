@@ -1,0 +1,24 @@
+{
+  "Type": "Desktop",
+  "Name": "Entry",
+
+	"TPLLocation": {
+		"Country": "MX",
+		"State": "",
+		"City": "",
+		"Facility": "HTR",
+		"Center": "HTR",
+		"Line": "TT3",
+		"Position": "*"
+	},
+  
+  "FrameworkVersion": 45,
+
+  "ExcludeLibPackages": [],
+  "ExcludeToolsPackages": [".*"],
+  "ExcludeContentPackages": [".*"],
+
+  "IncludeLibPackages": [],
+  "IncludeToolsPackages": [],
+  "IncludeContentPackages": []
+}

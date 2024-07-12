@@ -1,0 +1,8 @@
+﻿    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'Class', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idClass';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'Parameter', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idParameter';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'PlcParameterValue', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idPlcParameterValue';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'Plc', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idPlc';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'PlcTypePlcParameter', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idPlcTypePlcParameter';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'PlcTag', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idPlcTag';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'PlcType', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idPlcType';
+    EXEC [Configuration].[DoConfigDefineTableConfiguration] @SchemaName = 'Wedjet', @TableName = 'PlcParameter', @IsConfigurationTable = True, @UKColumns = null, @SortColumn = 'idPlcParameter';

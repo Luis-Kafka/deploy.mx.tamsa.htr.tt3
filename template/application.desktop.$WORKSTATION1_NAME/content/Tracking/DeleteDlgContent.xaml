@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="System.Windows.Controls.UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dialogs="clr-namespace:Tenaris.View.Tracking.Dialogs;assembly=Tenaris.View.Tracking.Dialogs"
+             >
+
+    <Grid>
+        <dialogs:DialogDelete TrackingList="{Binding TrackingList}" ZoneInfo="{Binding ZoneInfo}" ZoneConfig="{Binding ZoneConfig}" />
+    </Grid>
+</UserControl>

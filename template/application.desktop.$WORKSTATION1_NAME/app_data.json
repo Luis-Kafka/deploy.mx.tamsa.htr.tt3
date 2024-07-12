@@ -1,0 +1,24 @@
+{
+  "Type": "Desktop",
+  "Name": "$WORKSTATION1_NAME",
+
+	"TPLLocation": {
+		"Country": "$REGION",
+		"State": "",
+		"City": "",
+		"Facility": "$MILL",
+		"Center": "$MILL",
+		"Line": "$LINE",
+		"Position": "*"
+	},
+  
+  "FrameworkVersion": 45,
+
+  "ExcludeLibPackages": [],
+  "ExcludeToolsPackages": [".*"],
+  "ExcludeContentPackages": [".*"],
+
+  "IncludeLibPackages": [],
+  "IncludeToolsPackages": [],
+  "IncludeContentPackages": []
+}

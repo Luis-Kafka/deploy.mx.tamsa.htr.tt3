@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Tenaris.Bundle.MX.HTR.TT3.Forum</id>
+    <version>1.0.0</version>
+    <description>Forum Manager deploy bundle for TT3, HTR, MX.</description>
+    <authors>Tenaris MX</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Tenaris 2023</copyright>
+    <language>es-Mx</language>
+    <dependencies>
+      <dependency id="Tenaris.Forum.View" version="[4.1.2]" />
+      <dependency id="Tenaris.Manager.Forum.WinService" version="[4.1.2]" />       
+      <dependency id="Tenaris.Manager.Host" version="[4.1.2]" />
+      <dependency id="Tenaris.Manager.PLC.Shared" version="[4.1.0]" />
+      <dependency id="Tenaris.Manager.PLC" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.IAcquisition.Wedjet" version="[4.1.1]" />
+      <dependency id="Tenaris.Library.Acquisition.Wedjet" version="[4.1.1]" />
+      <dependency id="Tenaris.Library.Wedjet.Share.S7" version="[4.1.1]" />
+      <dependency id="Tenaris.Library.Transactions" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.Transactions.Sink" version="[4.1.0]" />
+	  <dependency id="Tenaris.Service.Security.Sink" version="[4.2.2]" />
+      <dependency id="Tenaris.Library.ApplicationConfiguration" version="[4.1.0]" />
+      <dependency id="Tenaris.Manager.Shift" version="[4.3.0]" />
+      <dependency id="Tenaris.Manager.Command" version="[4.1.3]" />
+      <dependency id="Tenaris.Manager.Handshake" version="[4.2.0]" />
+      <dependency id="Tenaris.Manager.Tracking" version="[4.2.1]" />
+      <dependency id="Tenaris.Manager.Production" version="[4.3.1]" />
+      <dependency id="Tenaris.Manager.Production.Plugin" version="[4.3.1]" />
+      <dependency id="Tenaris.Manager.Preset" version="[4.3.2]" />
+      <dependency id="Tenaris.Manager.Tda" version="[4.1.3]" />
+      <dependency id="Tenaris.Manager.Tda.Merge" version="[4.1.3]" />
+      <dependency id="Tenaris.Manager.Tda.Plugin.Handshake" version="[4.1.3]" />
+      <dependency id="Tenaris.Manager.Tda.Shared.Proxy" version="[4.1.3]" />
+      <dependency id="Tenaris.Manager.Interruption" version="[4.2.4]" />
+      <dependency id="Tenaris.Manager.Interruption.Plugin.Pipes" version="[4.2.4]" />
+      <dependency id="Tenaris.Manager.Alarm" version="[4.2.0]" />
+      <dependency id="Tenaris.Manager.TechAlarm" version="[4.1.0]" />
+      <dependency id="Tenaris.Manager.Diagnostic" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.DiagnosticPlugin.Alarm" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.DiagnosticPlugin.Tracking" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.DiagnosticPlugin.Handshake" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.DiagnosticPlugin.Communication" version="[4.1.0]" />
+	  <dependency id="Tenaris.Service.Specification.Manager" version="[4.1.0]" />
+	  <dependency id="Tenaris.Service.Specification.Client" version="[4.1.0]" />
+	  <dependency id="Tenaris.Service.Specification" version="[4.1.0]" />
+	  <dependency id="Tenaris.View.AUSStudio" version="[4.1.0]" />
+	  <dependency id="Tenaris.Manager.Scripting" version="[4.1.0]" />
+	  <dependency id="Tenaris.Manager.Message" version="[4.1.1]" />	  
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="app_data.json" target="app_data.json" />
+    <file src="config\*.*" target="config" />
+    <file src="content\**\*.*" target="content" />
+    <file src="tools\package.install.ps1" target="tools\package.install.ps1" />
+    <file src="tools\package.update.ps1" target="tools\package.update.ps1" />
+    <file src="tools\package.uninstall.ps1" target="tools\package.uninstall.ps1" />
+  </files>
+</package>

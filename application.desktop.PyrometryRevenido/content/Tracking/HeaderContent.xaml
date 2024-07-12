@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="System.Windows.Controls.UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="1000">
+
+  <UserControl.Resources>
+    <ResourceDictionary Source="pack://application:,,,/Tenaris.Library.UI.Framework;component/Themes/Generic.xaml" />
+  </UserControl.Resources>
+
+    <Expander Header="{Binding Path=Title}" IsExpanded="true">
+  <Grid Style="{StaticResource Table}" VerticalAlignment="Stretch" >
+    <Grid.ColumnDefinitions>
+      <!--0  -->
+      <ColumnDefinition Width="100" />
+      <!--1  -->
+      <ColumnDefinition />
+      <!--2  -->
+      <ColumnDefinition Width="100" />
+      <!--3  -->
+      <ColumnDefinition />
+      <!--4  -->
+      <ColumnDefinition Width="100" />
+      <!--5  -->
+      <ColumnDefinition />
+      <!--6  -->
+      <ColumnDefinition MinWidth="190" />
+      <!--7  -->
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="0" />
+      <RowDefinition Height="28" />
+      <RowDefinition Height="0" />
+      <RowDefinition Height="28" />
+      <RowDefinition Height="0" />
+      <RowDefinition Height="28" />
+      <RowDefinition Height="2" />
+    </Grid.RowDefinitions>
+
+    <!-- primera fila -->
+    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource TableItemCell}" Content="WorkOrder" />
+    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource TableValueCell}" Content="{Binding Path=Specification.Data[BC_WO_COMMON][WORKORDER].Value}" />
+
+    <Label Grid.Row="1" Grid.Column="4" Style="{StaticResource TableItemCell}" Content="Diameter" />
+    <Label Grid.Row="1" Grid.Column="5" Style="{StaticResource TableValueCell}" Content="Diameter" />
+
+    <Label Grid.Row="3" Grid.Column="4" Style="{StaticResource TableItemCell}" Content="Thickness" />
+    <Label Grid.Row="3" Grid.Column="5" Style="{StaticResource TableValueCell}" Content="Thickness" />
+
+    <!-- segunda fila -->
+    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource TableItemCell}" Content="Heat" />
+    <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource TableValueCell}" Content="{Binding Path=Specification.Data[BC_HEAT][HEAT].Value}" />
+
+    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource TableItemCell}" Content="SteelGrade" />
+    <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource TableValueCell}" Content="SteelGrade" />
+
+    <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource TableItemCell}" Content="SteelCode" />
+    <Label Grid.Row="3" Grid.Column="3" Style="{StaticResource TableValueCell}" Content="SteelCode" />
+
+    <Label Grid.Row="5" Grid.Column="4" Style="{StaticResource TableItemCell}" Content="LotNumber" />
+    <Label Grid.Row="5" Grid.Column="5" Style="{StaticResource TableValueCell}" Content="LotNumber" />
+    <!--<Label Grid.Row="5" Grid.Column="4" Style="{StaticResource TableItemCell}" Content="Color" />-->
+    <!--<Label Grid.Row="5" Grid.Column="5" Style="{StaticResource TableValueCell}" Content="{Binding Path=Specification.Data[HEAT][Color].Value}" />-->
+
+    <!-- tercera fila -->
+    <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource TableItemCell}" Content="Customer" />
+    <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource TableValueCell}" Content="Customer" />
+
+    <Label Grid.Row="1" Grid.Column="6" Style="{StaticResource TableItemCell}" Content="Tracking" />
+    <Label Grid.Row="1" Grid.Column="7" Style="{StaticResource TableValueCell}" Content="{Binding Path=TrackingList[0].Id}" />
+
+    <Label Grid.Row="3" Grid.Column="6" Style="{StaticResource TableItemCell}" Content="Batch" />
+    <Label Grid.Row="3" Grid.Column="7" Style="{StaticResource TableValueCell}" Content="{Binding Path=TrackingList[0].IdProductionHistory}" />
+
+    <Label Grid.Row="5" Grid.Column="6" Style="{StaticResource TableItemCell}" Content="Piece" />
+    <Label Grid.Row="5" Grid.Column="7" Style="{StaticResource TableValueCell}" Content="{Binding Path=TrackingList[0].TraceabilityNumber}" />
+
+  </Grid>
+    </Expander>
+
+</UserControl>

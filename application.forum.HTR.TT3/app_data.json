@@ -1,0 +1,24 @@
+{
+	"Type": "Server",
+	"Name": "HTR TT3 Forum",
+
+	"TPLLocation": {
+		"Country": "MX",
+		"State": "",
+		"City": "",
+		"Facility": "HTR",
+		"Center": "HTR",
+		"Line": "TT3",
+		"Position": "*"
+	},
+
+	"FrameworkVersion": 452,
+
+	"ExcludeLibPackages": [],
+	"ExcludeToolsPackages": [".*"],
+	"ExcludeContentPackages": [".*"],
+
+	"IncludeLibPackages": [],
+	"IncludeToolsPackages": [],
+	"IncludeContentPackages": []
+}

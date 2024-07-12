@@ -1,0 +1,801 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:control="clr-namespace:Tenaris.Library.UI.Framework;assembly=Tenaris.Library.UI.Framework"
+                    xmlns:conv="clr-namespace:Tenaris.View.Production.Converter;assembly=Tenaris.View.Production"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:loc="clr-namespace:Tenaris.View.Production.LanguageResource;assembly=Tenaris.View.Production.LanguageResource" 
+                    xmlns:uc="clr-namespace:Tenaris.View.Production.View;assembly=Tenaris.View.Production" 
+                    xmlns:wpfTk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit">
+    
+    
+    <DataTemplate x:Key="OrderInfoTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblHeader" Content="Informacion orden activa" Style="{StaticResource Header}" Height="28" Grid.Row="0" />
+
+            <Border Style="{StaticResource SubHeader}" Grid.Row="1">
+                <Grid x:Name="grdOrderInformationContent" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="lblOrder" Content="OP" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="lblOrderValue" Content="{Binding Path=SpecificationData[OP].[OP].Value}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="1" />
+                    <Label x:Name="lblDiameter" Content="Diametro [mm]" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="2" />
+                    <Label x:Name="lblDiameterValue" Content="{Binding Path=SpecificationData[OpSecuencia].[DiametroNominal].Value, Converter={StaticResource converter}}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="0" Grid.Column="3" />
+                    <Label x:Name="lblThickness" Content="Espesor [mm]" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="4" />
+                    <Label x:Name="lblThicknessValue" Content="{Binding Path=SpecificationData[OpSecuencia].[EspesorNominal].Value, Converter={StaticResource converter}}" Style="{StaticResource TableValueCell}" Grid.Row="0" Grid.Column="5" />
+
+                    <Label x:Name="lblHeat" Content="LINGADA" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="lblHeatValue" Content="{Binding Path=SpecificationData[LINGADA].[LINGADA].Value}" Style="{StaticResource TableValueCell}" Grid.Row="1" Grid.Column="1" />
+                    <Label x:Name="lblSteelCode" Content="SECUENCIA" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="2"  />
+                    <Label x:Name="lblSteelCodeValue" Content="{Binding Path=SpecificationData[SECUENCIA].[SECUENCIA].Value}" Style="{StaticResource TableValueCell}" Grid.Row="1" Grid.Column="3"  />
+                    <Label x:Name="lblHeatTreatmentType" Content="Grado Acero" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="4" />
+                    <Label x:Name="lblHeatTreatmentTypeValue" Content="{Binding Path=SpecificationData[OP].[PTGradoAcero].Value, Converter={StaticResource converter}}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="1" Grid.Column="5" />
+
+                    <Label x:Name="lblCustomer" Content="Cliente" Style="{StaticResource TableItemCell}" Grid.Row="2" Grid.Column="0"  />
+                    <Label x:Name="lblCustomerValue" Content="{Binding Path=SpecificationData[OP].[OpCliente].Value}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Left"/>
+                    <Label x:Name="lblThreadType" Content="Tipo" Style="{StaticResource TableItemCell}" Grid.Row="2" Grid.Column="4" />
+                    <Label x:Name="lblThreadTypeValue" Content="{Binding Path=SpecificationData[OP].[PTTipoSubtipoDesc].Value}" Style="{StaticResource TableValueCell}"  Grid.Row="2" Grid.Column="5" HorizontalContentAlignment="Left"/>        
+                    
+                </Grid>
+            </Border>
+
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="FutureOrderInfoTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblHeader" Content="Informacion orden futura" Style="{StaticResource Header}" Height="28" Grid.Row="0"/>
+
+            <Border Style="{StaticResource SubHeader}" Grid.Row="1">
+                <Grid x:Name="grdOrderInformationContent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="lblOrder" Content="OP" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="lblOrderValue" Content="{Binding Path=FutureSpecificationData[OP].[OP].Value}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="1" />
+                    <Label x:Name="lblDiameter" Content="Diametro [mm]" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="2" />
+                    <Label x:Name="lblDiameterValue" Content="{Binding Path=FutureSpecificationData[OpSecuencia].[DiametroNominal].Value, Converter={StaticResource converter}}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="0" Grid.Column="3" />
+                    <Label x:Name="lblThickness" Content="Thickness [in]" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="4" />
+                    <Label x:Name="lblThicknessValue" Content="{Binding Path=FutureSpecificationData[OpSecuencia].[EspesorNominal].Value, Converter={StaticResource converter}}" Style="{StaticResource TableValueCell}" Grid.Row="0" Grid.Column="5" />
+
+                    <Label x:Name="lblHeat" Content="LINGADA" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="lblHeatValue" Content="{Binding Path=FutureSpecificationData[LINGADA].[LINGADA].Value}" Style="{StaticResource TableValueCell}" Grid.Row="1" Grid.Column="1" />
+                    <Label x:Name="lblSteelCode" Content="SECUENCIA" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="2"  />
+                    <Label x:Name="lblSteelCodeValue" Content="{Binding Path=FutureSpecificationData[SECUENCIA].[SECUENCIA].Value}" Style="{StaticResource TableValueCell}" Grid.Row="1" Grid.Column="3"  />
+                    <Label x:Name="lblHeatTreatmentType" Content="Grado Acero" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="4" />
+                    <Label x:Name="lblHeatTreatmentTypeValue" Content="{Binding Path=FutureSpecificationData[OP].[PTGradoAcero].Value, Converter={StaticResource converter}}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="1" Grid.Column="5" />
+
+                    <Label x:Name="lblCustomer" Content="Cliente" Style="{StaticResource TableItemCell}" Grid.Row="2" Grid.Column="0"  />
+                    <Label x:Name="lblCustomerValue" Content="{Binding Path=FutureSpecificationData[OP].[OpCliente].Value}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Left"/>
+                    <Label x:Name="lblThreadType" Content="Tipo" Style="{StaticResource TableItemCell}" Grid.Row="2" Grid.Column="4" />
+                    <Label x:Name="lblThreadTypeValue" Content="{Binding Path=FutureSpecificationData[OP].[PTTipoSubtipoDesc].Value}" Style="{StaticResource TableValueCell}"  Grid.Row="2" Grid.Column="5" HorizontalContentAlignment="Left"/>        
+
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ScheduledPiecesCounters">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Label x:Name="lblToWorkPieces" Content="Piezas Programadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="0" />
+            <Label x:Name="lblToWorkPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Programmed]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="0" />
+            
+            <Label x:Name="lblEnteredPieces" Content="Piezas Cargadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="1" />
+            <Label x:Name="lblEnteredPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Loaded]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="1" />
+            
+            <Label x:Name="lblReworkedPieces" Content="Piezas Retrabajadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="3" />
+            <Label x:Name="lblReworkedPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Rework]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="3" />
+
+            <Label x:Name="lblGoodPieces" Content="Piezas Buenas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="4" />
+            <Label x:Name="lblGoodPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Good]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="4" />
+            
+            <Label x:Name="lblDiscardedPieces" Content="Piezas Descartadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="5" />
+            <Label x:Name="lblDiscardedPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Discarded]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="5" />
+            
+            <Label x:Name="lblHoldPieces" Content="Piezas en Espera" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="6" />
+            <Label x:Name="lblHoldPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Hold]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="6" />
+            
+            <Label x:Name="lblWarnedPieces" Content="Piezas Advertidas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="7" />
+            <Label x:Name="lblWarnedPiecesValue" Content="{Binding Path=MachineModel.ScheduledPieces.CustomCounters[Warned]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="7" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ShiftSummaryCounters">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Label x:Name="lblShift" Content="Turno" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="0" />
+            <Label x:Name="lblShiftValue" Content="{Binding Path=MachineModel.ShiftSummary.ShiftNumber}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="0" />
+            
+            <Label x:Name="lblShiftLoadedPieces" Content="Piezas Cargadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="1" />
+            <Label x:Name="lblShiftLoadedPiecesValue" Content="{Binding Path=MachineModel.ShiftSummary.CustomCounters[Loaded]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="1" />
+
+            <Label x:Name="lblShiftReworkedPieces" Content="Piezas Retrabajadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="3" />
+            <Label x:Name="lblShiftReworkedPiecesValue" Content="{Binding Path=MachineModel.ShiftSummary.CustomCounters[Rework]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="3" />
+            
+            <Label x:Name="lblShiftGoodPieces" Content="Piezas Buenas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="4" />
+            <Label x:Name="lblShiftGoodPiecesValue" Content="{Binding Path=MachineModel.ShiftSummary.CustomCounters[Good]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="4" />
+            
+            <Label x:Name="lblShiftDiscardedPieces" Content="Piezas Descartadas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="5" />
+            <Label x:Name="lblShiftDiscardedPiecesValue" Content="{Binding Path=MachineModel.ShiftSummary.CustomCounters[Discarded]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="5" />
+            
+            <Label x:Name="lblShiftHoldPieces" Content="Piezas en Espera" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="6" />
+            <Label x:Name="lblShiftHoldPiecesValue" Content="{Binding Path=MachineModel.ShiftSummary.CustomCounters[Hold]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="6" />
+            
+            <Label x:Name="lblShiftWarnedPieces" Content="Piezas Advertidas" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="7" />
+            <Label x:Name="lblShiftWarnedPiecesValue" Content="{Binding Path=MachineModel.ShiftSummary.CustomCounters[Warned]}" Style="{StaticResource TableValueCell}" Grid.Column="1" Grid.Row="7" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ProcessMassBalanceTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+
+            <Style x:Key="FlipScaleStyleText" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextProcessMassBalance}" >
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ReverseBalanceLayout}" Value="true">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="FlipScaleStyleTextValue" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextValueProcessMassBalance}" >
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ReverseBalanceLayout}" Value="true">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="FlipScaleStyle" TargetType="{x:Type Canvas}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ReverseBalanceLayout}" Value="true">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </DataTemplate.Resources>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="lblHeader" Content="{x:Static loc:ProcessMassBalance.lblHeaderProcessMassBalance}" Style="{StaticResource ColumnHeader}" Height="28" VerticalAlignment="Top" Grid.Row="0"/>
+            <Border Style="{StaticResource SubHeader}" BorderThickness="1,1,1,1" Grid.Row="1" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                    <Canvas Width="1020" Height="300" Margin="-40,2,0,2" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyle}">
+
+                        <TextBox Text="Retrabajadas"                                                Canvas.Left="380"   Canvas.Top="180"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Rework]}"       Canvas.Left="380"   Canvas.Top="210"    Background="#B55D73" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        
+                        <TextBox Text="Programadas"                                                 Canvas.Left="80"    Canvas.Top="80"     RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Programmed]}"   Canvas.Left="80"    Canvas.Top="110"     Background="#636563" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+                        
+
+                        <TextBox Text="Faltantes"                                                   Canvas.Left="230"   Canvas.Top="80"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Remaining]}"    Canvas.Left="230"   Canvas.Top="110"    Background="#00009C" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        
+                        <TextBox Text="Cargadas"                                                    Canvas.Left="380"   Canvas.Top="80"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Loaded]}"       Canvas.Left="380"   Canvas.Top="110"    Background="#630063" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+                        
+                        
+                        <TextBox Text="Contadas"                                                    Canvas.Left="530"   Canvas.Top="80"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Counted]}"      Canvas.Left="530"   Canvas.Top="110"    Background="#630063" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+
+                        <TextBox Text="Despachadas"                                                 Canvas.Left="680"   Canvas.Top="80"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Exited]}"       Canvas.Left="680"   Canvas.Top="110"    Background="#630063" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+
+                        <TextBox Text="Buenas"                                                      Canvas.Left="830"   Canvas.Top="10"      RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Good]}"         Canvas.Left="830"   Canvas.Top="40"     Background="#006531" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <TextBox Text="Descartadas"                                                 Canvas.Left="830"   Canvas.Top="80"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Discarded]}"    Canvas.Left="830"   Canvas.Top="110"    Background="#6382AD" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <TextBox Text="Espera"                                                      Canvas.Left="830"   Canvas.Top="150"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Hold]}"         Canvas.Left="830"   Canvas.Top="180"    Background="#9C0000" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <TextBox Text="Advertidas"                                                  Canvas.Left="830"   Canvas.Top="220"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=ScheduledPieces.CustomCounters[Warned]}"       Canvas.Left="830"   Canvas.Top="250"    Background="#FF9900" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+                    
+                        
+                        <Line X1="810" X2="810" Y1="39"  Y2="250" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="175" X2="830" Y1="110" Y2="110" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="215" X2="655" Y1="210" Y2="210" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="810" X2="830" Y1="40"  Y2="40"  Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="810" X2="830" Y1="180" Y2="180" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="215" X2="215" Y1="110" Y2="210" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="655" X2="655" Y1="110" Y2="210" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="810" X2="830" Y1="250" Y2="250" Stroke="Black" StrokeThickness="2" Panel.ZIndex="-1" />
+
+                    </Canvas>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OrderInfoSelectNewProductTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblHeader" Content="{x:Static loc:OrderInformation.lblHeaderSelectNewProduct}" Style="{StaticResource Header}" Height="28" Grid.Row="0" />
+
+            <Border Style="{StaticResource SubHeader}" BorderThickness="1,1,1,1" Grid.Row="1">
+                <Grid x:Name="grdOrderInformationContent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Fields must be coherent with the ones returned by [ProductionView].[GetCenterMachineBatches] stp -->
+                    <Label x:Name="lblOrder" Content="OP" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="lblOrderValue" Content="{Binding Path=GridSelectedItem.CustomFields[OP]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="1" />
+                    
+                    <Label x:Name="lblDiameter" Content="Diametro [mm]" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="2" />
+                    <Label x:Name="lblDiameterValue" Content="{Binding Path=GridSelectedItem.CustomFields[DiametroNominal], Converter={StaticResource converter}}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="0" Grid.Column="3" />
+                    
+                    <Label x:Name="lblThickness" Content="Espesor [mm]" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="4" />
+                    <Label x:Name="lblThicknessValue" Content="{Binding Path=GridSelectedItem.CustomFields[EspesorNominal], Converter={StaticResource converter}}" Style="{StaticResource TableValueCell}" Grid.Row="0" Grid.Column="5" />
+
+                    
+                    <Label x:Name="lblHeat" Content="LINGADA" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="lblHeatValue" Content="{Binding Path=GridSelectedItem.CustomFields[LINGADA]}" Style="{StaticResource TableValueCell}" Grid.Row="1" Grid.Column="1" />
+                    
+                    <Label x:Name="lblSteelCode" Content="SECUENCIA" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="2"  />
+                    <Label x:Name="lblSteelCodeValue" Content="{Binding Path=GridSelectedItem.CustomFields[SECUENCIA]}" Style="{StaticResource TableValueCell}" Grid.Row="1" Grid.Column="3"  />
+                    
+                    <Label x:Name="lblHeatTreatmentType" Content="Grado Acero" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="4" />
+                    <Label x:Name="lblHeatTreatmentTypeValue" Content="{Binding Path=GridSelectedItem.CustomFields[PTGradoAcero], Converter={StaticResource converter}}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="1" Grid.Column="5" />
+
+                    
+                    <Label x:Name="lblCustomer" Content="Cliente" Style="{StaticResource TableItemCell}" Grid.Row="2" Grid.Column="0"  />
+                    <Label x:Name="lblCustomerValue" Content="{Binding Path=GridSelectedItem.CustomFields[OpCliente]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Left"/>
+                    
+                    <Label x:Name="lblThreadType" Content="Tipo" Style="{StaticResource TableItemCell}" Grid.Row="2" Grid.Column="4" />
+                    <Label x:Name="lblThreadTypeValue" Content="{Binding Path=GridSelectedItem.CustomFields[PTTipoSubtipoDesc]}" Style="{StaticResource TableValueCell}"  Grid.Row="2" Grid.Column="5" HorizontalContentAlignment="Left"/>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="NewProductGridTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <DataGrid x:Name="grdOrders" ItemsSource="{Binding Path=FilteredOrders}" Grid.Row="2"
+                  HorizontalAlignment="Left" BorderThickness="1,0,1,1" MinHeight="200" MaxHeight="400"
+                  SelectionMode="Single" SelectedItem="{Binding GridSelectedItem}" AutoGenerateColumns="False" Width="Auto"
+                  VerticalScrollBarVisibility="Auto">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding GridSelectionChangedCommand}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseDoubleClick" >
+                    <i:InvokeCommandAction Command="{Binding GridDoubleClickCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{x:Static loc:SelectNewProductPopup.gridLine}" Width="70" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnLineFlag" Style="{x:Null}" Background="Transparent" BorderThickness="0" Width="Auto" Height="Auto" Padding="0" Margin="0" Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.LineStatusCommand}">
+                                <Image Style="{DynamicResource LineStatusFlag}"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{x:Static loc:SelectNewProductPopup.gridStation}" Width="70" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Style="{DynamicResource StationStatusFlag}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <!-- Fields must be coherent with the ones returned by [ProductionView].[GetCenterMachineBatches] stp -->
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[OP]}" IsReadOnly="True" Header="OP" Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[LINGADA]}" IsReadOnly="True" Header="LINGADA" Width="*" />
+				<DataGridTextColumn Binding="{Binding Path=CustomFields[SECUENCIA]}" IsReadOnly="True" Header="SECUENCIA" Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[DiametroNominal]}" IsReadOnly="True" Header="Diametro [mm]" Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[EspesorNominal]}" IsReadOnly="True" Header="Espesor [mm]" Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[PTGradoAcero]}" IsReadOnly="True" Header="Grado Acero" Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[ProgrammedCount]}" Header="Piezas Programadas" Width="*" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[EnteredCount]}" Header="Piezas Ingresadas" Width="*" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=CustomFields[LoadedCount]}" Header="Piezas Cargadas" Width="*" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ProductFilterTemplate">
+        <Grid Name="FilterPanel" Style="{StaticResource Table}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Height="Auto" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Width="200" Height="25" HorizontalAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Padding="0" Style="{StaticResource TableItemCell}" >
+                <StackPanel Orientation="Horizontal" Style="{StaticResource TableItemCell}" >
+                    <CheckBox x:Name="chkByProduct" Width="14" Padding="0" Margin="4,0,0,0" Background="White" VerticalAlignment="Center" Content="{x:Static loc:HistoricReport.lblByProduct}" HorizontalAlignment="Left" IsChecked="{Binding ProductIsChecked}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Checked" >
+                                <i:InvokeCommandAction Command="{Binding EnableByProductSearchCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Unchecked" >
+                                <i:InvokeCommandAction Command="{Binding DisableByProductSearchCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </CheckBox>
+                    <Label Width="112" Content="{x:Static loc:HistoricReport.lblByProduct}" Style="{StaticResource SubHeaderTitle}"  Height="25" HorizontalAlignment="Left" Name="lblByProduct" />
+                </StackPanel>
+            </Label>
+            <Label Grid.Column="0"  Width="100" Content="Order" Style="{StaticResource TableItemCell}"   Height="25" HorizontalAlignment="Left" Name="lblOrder" Grid.Row="1"/>
+            <TextBox Grid.Column="1" Width="100" Name="txtOrder"  Margin="0,1,0,1" Text="{Binding DynamicFilters.OrderNumber, Mode=TwoWay}" Grid.Row="1" IsEnabled="{Binding EnableByProductSearch}"/>
+            
+            <Label Grid.Column="0" Width="100" Content="Heat" Height="25" Style="{StaticResource TableItemCell}" HorizontalAlignment="Left" Name="lblPipeHeat"  Grid.Row="2" />
+            <TextBox Grid.Column="1" Width="100" Name="txtPipeHeat" Margin="0,1,0,1"  Text="{Binding DynamicFilters.HeatNumber, Mode=TwoWay}" Grid.Row="2" IsEnabled="{Binding EnableByProductSearch}"/>
+
+            <Label Grid.Column="2" Width="150"  Content="Steel Grade" Height="25" Style="{StaticResource TableItemCell}" HorizontalAlignment="Left" Name="lblSteelGrade"  Grid.Row="0"/>
+            <TextBox Grid.Column="3" Width="100" Name="txtSteelGrade" Margin="0,1,0,1"   Grid.Row="0" Text="{Binding DynamicFilters.SteelGrade, Mode=TwoWay}" IsEnabled="{Binding EnableByProductSearch}"/>
+            
+            <Label Grid.Column="2" Width="150"  Content="Steel" Height="25" HorizontalAlignment="Left" Style="{StaticResource TableItemCell}"  Name="lblSteelCode"    Grid.Row="1" />
+            <TextBox Grid.Column="3" Width="100" Name="txtSteelCode" Margin="0,1,0,1"  Grid.Row="1"  Text="{Binding DynamicFilters.SteelCode, Mode=TwoWay}" IsEnabled="{Binding EnableByProductSearch}"/>
+
+            <Label Grid.Column="4"  Width="130" Content="Diameter [in]" Height="25" Style="{StaticResource TableItemCell}" HorizontalAlignment="Left" Name="lblPipeDiameter"  Grid.Row="0" />
+            <TextBox Grid.Column="5" Width="100" Name="txtPipeDiameter"   Margin="0,1,0,1"  Grid.Row="0" Text="{Binding DynamicFilters.Diameter, Mode=TwoWay}" IsEnabled="{Binding EnableByProductSearch}"/>
+            
+            <Label Grid.Column="4" Width="130" Content="Thickness [in]" Height="25" HorizontalAlignment="Left" Style="{StaticResource TableItemCell}" Name="lblPipeThickness"  Grid.Row="1" />
+            <TextBox Grid.Column="5"  Width="100" Name="txtPipeThickness"  Margin="0,1"  Text="{Binding DynamicFilters.Thickness, Mode=TwoWay}" HorizontalAlignment="Left" Grid.Row="1" IsEnabled="{Binding EnableByProductSearch}"/>
+            
+            <Label Grid.Column="6" Grid.Row="0" Width="90" Content="Station" Height="25" HorizontalAlignment="Left" Name="lblStation"  Style="{StaticResource TableItemCell}" />
+            <ComboBox Grid.Column="7" Grid.Row="0" Width="350" Name="cboxStation" Margin="1,1,1,1" ItemsSource="{Binding StationBind}" DisplayMemberPath="Name" SelectedValuePath="Code" SelectedIndex="{Binding StationSelectedIndex, IsAsync=True, Mode=TwoWay}" SelectedValue="{Binding DynamicFilters.StationCode, Mode=TwoWay}" SelectedItem="{Binding SelectedStation}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ResultByProductDataGridTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <DataGrid 
+                  Name="UserDataGrid" MinHeight="500"
+                  HorizontalScrollBarVisibility="Visible" SelectionMode="Extended"
+                  VerticalScrollBarVisibility="Visible"
+                  CanUserAddRows="False" CanUserDeleteRows="False"
+                  CanUserResizeRows="False" CanUserSortColumns="False" CanUserResizeColumns="True"       
+                  ItemsSource="{Binding HistoryResult}"
+		          AutoGenerateColumns="False">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick" >
+                    <i:InvokeCommandAction Command="{Binding ProductionByProductCommand}" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Start Date" MinWidth="180" Width="Auto"  Binding="{Binding Path=Data.BeginDateTime, StringFormat=\{0:M/d/yyyy HH:mm:ss\}}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="End Date" MinWidth="180" Width="Auto" Binding="{Binding Path=Data.EndDateTime, StringFormat=\{0:M/d/yyyy HH:mm:ss\}}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Order" MinWidth="90" Width="Auto" Binding="{Binding Path=Data.OrderNumber}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Steel" MinWidth="80" Width="Auto" Binding="{Binding Path=Data.SteelCode}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Diameter [in]" MinWidth="80" Width="Auto" Binding="{Binding Path=Data.Diameter, Converter={StaticResource converter}}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Thickness [in]" MinWidth="80" Width="Auto" Binding="{Binding Path=Data.Thickness, Converter={StaticResource converter}}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Programmed Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ProgrammedPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Loaded Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.LoadedPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Rework Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ReworkedPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Good Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.GoodPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Scrap Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ScrapPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Hold Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.HoldPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Warned Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.WarnedPieces}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="ResultByDatesDataGridTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <DataGrid
+                Name="UserDataGrid" MinHeight="500"
+                HorizontalScrollBarVisibility="Visible" SelectionMode="Extended"
+                VerticalScrollBarVisibility="Visible"
+                CanUserAddRows="False" CanUserDeleteRows="False"
+                CanUserResizeRows="False" CanUserSortColumns="False" CanUserResizeColumns="True"
+                ItemsSource="{Binding HistoryResult}"
+		        AutoGenerateColumns="False">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick" >
+                    <i:InvokeCommandAction Command="{Binding ProductionByShiftCommand}" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="col1" Header="Shift Date" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ShiftDate, StringFormat=\{0:M/d/yyyy \}}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col2" Header="Shift Number" MinWidth="70" Width="Auto" Binding="{Binding Path=Data.ShiftNumber}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col3" Header="Programmed Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ProgrammedPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col4" Header="Loaded Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.LoadedPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col5" Header="Rework Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ReworkedPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col6" Header="Good Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.GoodPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col7" Header="Scrap Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.ScrapPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col8" Header="Hold Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.HoldPieces}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="col9" Header="Warned Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=Data.WarnedPieces}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="HistoricMassBalanceTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+
+            <Style x:Key="FlipScaleStyleText" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextProcessMassBalance}" >
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ReverseBalanceLayout}" Value="true">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="FlipScaleStyleTextValue" TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextValueProcessMassBalance}" >
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ReverseBalanceLayout}" Value="true">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="FlipScaleStyle" TargetType="{x:Type Canvas}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ReverseBalanceLayout}" Value="true">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </DataTemplate.Resources>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="lblHeader" Content="{x:Static loc:ProcessMassBalance.lblHeaderProcessMassBalance}" Style="{StaticResource ColumnHeader}" Height="28" VerticalAlignment="Top" Grid.Row="0"/>
+            <Border Style="{StaticResource SubHeader}" BorderThickness="1,1,1,1" Grid.Row="1" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                    <Canvas Width="520" Height="280" Margin="0,2,0,2" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyle}">
+                    
+                        <TextBox Text="Good"                                                    Canvas.Left="410"   Canvas.Top="0"      RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[GoodPieces]}"        Canvas.Left="410"   Canvas.Top="30"     Background="#006531" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+                    
+                        <TextBox Text="Scrap"                                                   Canvas.Left="410"   Canvas.Top="70"     BorderThickness="0" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[ScrapPieces]}"       Canvas.Left="410"   Canvas.Top="100"    Background="#6382AD" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <TextBox Text="Hold"                                                    Canvas.Left="410"   Canvas.Top="140"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[HoldPieces]}"        Canvas.Left="410"   Canvas.Top="170"    Background="#9C0000" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <TextBox Text="Warned"                                                  Canvas.Left="410"   Canvas.Top="210"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[WarnedPieces]}"      Canvas.Left="410"   Canvas.Top="240"    Background="#FF9900" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        
+                        
+                        <TextBox Text="Loaded"                                                  Canvas.Left="200"   Canvas.Top="70"     RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[LoadedPieces]}"      Canvas.Left="200"   Canvas.Top="100"    Background="#630063" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <TextBox Text="Rework"                                                  Canvas.Left="200"   Canvas.Top="140"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[ReworkedPieces]}"    Canvas.Left="200"   Canvas.Top="170"    Background="#B55D73" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+                        
+                        <!--
+                        <TextBox Text="{x:Static loc:ProcessMassBalance.RemainingPiecesAbbr}"   Canvas.Left="215"   Canvas.Top="140"    RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[RemainingPieces]}"   Canvas.Left="215"   Canvas.Top="170"    Background="#00009C" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+                        -->
+                        
+                        
+                        <TextBox Text="Programmed"                                              Canvas.Left="0"     Canvas.Top="70"     RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleText}" BorderThickness="0" IsReadOnly="True" />
+                        <TextBox Text="{Binding Path=BatchData.Data.Values[ProgrammedPieces]}"  Canvas.Left="0"     Canvas.Top="100"    Background="#636563" RenderTransformOrigin="0.5,0.5" Style="{StaticResource ResourceKey=FlipScaleStyleTextValue}" IsReadOnly="True" />
+
+                        <Line X1="390" X2="390" Y1="29"  Y2="241"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="390" X2="410" Y1="30"  Y2="30"    Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="100" X2="450" Y1="100" Y2="100"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="390" X2="410" Y1="170" Y2="170"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="390" X2="410" Y1="240" Y2="240"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        
+                        <Line X1="160" X2="340" Y1="170" Y2="170"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="160" X2="160" Y1="170" Y2="100"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        <Line X1="340" X2="340" Y1="170" Y2="100"   Stroke="Black"  StrokeThickness="2" Panel.ZIndex="-1" />
+                        
+                    </Canvas>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HistoricBatchPiecesInformation">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Border Style="{StaticResource SubHeader}" BorderThickness="1,1,1,1" >
+            <Grid Width="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                
+                <Label x:Name="lblProgrammed" Content="Programmed Pieces" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="0" />
+                <Label x:Name="lblProgrammedValue" Content="{Binding Path=BatchData.Data.Values[ProgrammedPieces]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="0" Grid.Column="1" />
+                
+                <Label x:Name="lblLoaded" Content="Loaded Pieces" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="2" />
+                <Label x:Name="lblLoadedValue" Content="{Binding Path=BatchData.Data.Values[LoadedPieces]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="0" Grid.Column="3" />
+                
+                <Label x:Name="lblReworked" Content="Rework Pieces" Style="{StaticResource TableItemCell}" Grid.Row="0" Grid.Column="4" />
+                <Label x:Name="lblReworkedValue" Content="{Binding Path=BatchData.Data.Values[ReworkedPieces]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="0" Grid.Column="5" />
+                
+                <Label x:Name="lblGood" Content="Good Pieces" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="0" />
+                <Label x:Name="lblGoodValue" Content="{Binding Path=BatchData.Data.Values[GoodPieces]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="1" Grid.Column="1" />
+                
+                <Label x:Name="lblScrap" Content="Scrap Pieces" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="2" />
+                <Label x:Name="lblScrapValue" Content="{Binding Path=BatchData.Data.Values[ScrapPieces]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="1" Grid.Column="3" />
+                
+                <Label x:Name="lblRejected" Content="Hold Pieces" Style="{StaticResource TableItemCell}" Grid.Row="1" Grid.Column="4" />
+                <Label x:Name="lblRejectedValue" Content="{Binding Path=BatchData.Data.Values[HoldPieces]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Row="1" Grid.Column="5" />
+                
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HistoricBatchInformation">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Border Style="{StaticResource SubHeader}" BorderThickness="1,1,1,1" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="180" />
+                    <ColumnDefinition Width="180" />
+                </Grid.ColumnDefinitions>
+                
+                <Label x:Name="lblOrder" Content="Order" Style="{StaticResource TableItemCell}" Grid.Column="0"/>
+                <Label x:Name="lblOrderValue" Content="{Binding Path=BatchData.Data.Values[OrderNumber]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="1" />
+                
+                <Label x:Name="lblHeat" Content="Heat" Style="{StaticResource TableItemCell}" Grid.Column="2" />
+                <Label x:Name="lblHeatValue" Content="{Binding Path=BatchData.Data.Values[HeatNumber]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="3" />
+                
+                <Label x:Name="lblDiameter" Content="Diameter [in]" Style="{StaticResource TableItemCell}" Grid.Column="4" />
+                <Label x:Name="lblDiameterValue" Content="{Binding Path=BatchData.Data.Values[Diameter]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="5" />
+                
+                <Label x:Name="lblThickness" Content="Thickness [in]" Style="{StaticResource TableItemCell}" Grid.Column="4" Grid.Row="1" />
+                <Label x:Name="lblThicknessValue" Content="{Binding Path=BatchData.Data.Values[Thickness], Converter={StaticResource converter}}" Style="{StaticResource TableValueCell}" Grid.Column="5" Grid.Row="1" />
+                
+                <Label x:Name="lblCustomer" Content="Customer" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="1" />
+                <Label x:Name="lblCustomerValue" Content="{Binding Path=BatchData.Data.Values[Customer]}" Style="{StaticResource TableValueCellHighRelevance}" Grid.Column="1" Grid.Row="1" />
+                
+                <Label x:Name="lblSteelCode" Content="Steel" Style="{StaticResource TableItemCell}" Grid.Column="2" Grid.Row="1" />
+                <Label x:Name="lblSteelCodeValue" Content="{Binding Path=BatchData.Data.Values[SteelCode]}" Style="{StaticResource TableValueCell}" Grid.Column="3" Grid.Row="1" />
+                
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ShiftBatchesTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="lblHeader" Content="{Binding ShiftBatchesHeader}" Style="{StaticResource Header}" Height="Auto" Grid.Row="0" />
+            <Border Style="{StaticResource SubHeader}" BorderThickness="1,1,1,1" Grid.Row="1">
+                <ScrollViewer>
+                    <DataGrid 
+                      Name="UserDataGrid" SelectionMode="Single"
+                      HorizontalScrollBarVisibility="Visible"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      CanUserResizeRows="False" CanUserSortColumns="False" CanUserResizeColumns="True"       
+                      ItemsSource="{Binding ShiftBatches}"
+		              AutoGenerateColumns="False">
+                        <DataGrid.ItemContainerStyle>
+                            <Style TargetType="{x:Type DataGridRow}">
+                            </Style>
+                        </DataGrid.ItemContainerStyle>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged" >
+                                <i:InvokeCommandAction Command="{Binding GetBatchDataCommand}" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Start Date" MinWidth="180" Width="Auto"  Binding="{Binding Path=Data.BeginDateTime, StringFormat=\{0:M/d/yyyy HH:mm:ss\}}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="End Date" MinWidth="180" Width="Auto" Binding="{Binding Path=Data.EndDateTime, StringFormat=\{0:M/d/yyyy HH:mm:ss\}}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Order" MinWidth="90" Width="Auto" Binding="{Binding Path=Data.OrderNumber}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Steel" MinWidth="80" Width="Auto" Binding="{Binding Path=Data.SteelCode}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Diameter [in]" MinWidth="80" Width="Auto" Binding="{Binding Path=Data.Diameter, Converter={StaticResource converter}}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Thickness [in]" MinWidth="80" Width="Auto" Binding="{Binding Path=Data.Thickness, Converter={StaticResource converter}}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Programmed Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=ProgrammedPieces}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Loaded Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=LoadedPieces}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Reworked Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=ReworkedPieces}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Good Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=GoodPieces}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Scrap Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=ScrapPieces}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Hold Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=HoldPieces}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Warned Pieces" MinWidth="100" Width="Auto" Binding="{Binding Path=WarnedPieces}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="EditScheduledPiecesCountersTemplate">
+        <DataTemplate.Resources>
+            <conv:ObjectToStringConverter x:Key="converter" />
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblGoodPieces" Content="{x:Static loc:ProcessMassBalance.GoodPieces}" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="0" />
+            <wpfTk:IntegerUpDown x:Name="lblGoodPiecesValue" Value="{Binding Path=Pieces[Good]}" Minimum="0" Grid.Column="1" Grid.Row="0" />
+            
+            <Label x:Name="lblDiscardedPieces" Content="{x:Static loc:ProcessMassBalance.ScrapPieces}" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="1" />
+            <wpfTk:IntegerUpDown x:Name="lblDiscardedPiecesValue" Value="{Binding Path=Pieces[Discarded]}" Minimum="0" Grid.Column="1" Grid.Row="1" />
+            
+            <Label x:Name="lblHoldPieces" Content="{x:Static loc:ProcessMassBalance.HoldPieces}" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="2" />
+            <wpfTk:IntegerUpDown x:Name="lblHoldPiecesValue" Value="{Binding Path=Pieces[Hold]}" Minimum="0" Grid.Column="1" Grid.Row="2" />
+            
+            <Label x:Name="lblWarnedPieces" Content="{x:Static loc:ProcessMassBalance.WarnedPieces}" Style="{StaticResource TableItemCell}" Grid.Column="0" Grid.Row="3" />
+            <wpfTk:IntegerUpDown x:Name="lblWarnedPiecesValue" Value="{Binding Path=Pieces[Warned]}" Minimum="0" Grid.Column="1" Grid.Row="3" />
+            
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

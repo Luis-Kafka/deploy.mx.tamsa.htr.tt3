@@ -1,0 +1,58 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                    
+                    xmlns:ui="clr-namespace:Tenaris.Library.UI.Framework;assembly=Tenaris.Library.UI.Framework"
+                    xmlns:framework="http://schemas.tenaris.ot/xaml"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+                    xmlns:loc="clr-namespace:Tenaris.View.Preset.LanguageResource;assembly=Tenaris.View.Preset.LanguageResource">
+
+	
+	
+
+    <!-- Historic control template -->
+    <DataTemplate x:Key="HistoricControlTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="0" Margin="0,1,1,-1" >
+                <Label DockPanel.Dock="Top" Style="{StaticResource Header}" Content="{x:Static loc:LanguageResource.Header_HistoricPresets}"/>
+                <Border Style="{StaticResource ResourceKey=Table}">
+                    <DataGrid DockPanel.Dock="Top"  Name="DtgExitCassettes" Height="Auto"
+                                                    ItemsSource="{Binding HistoricPresets}"
+                                                    SelectedItem="{Binding SelectedPreset}"                                                     
+                                                    VirtualizingStackPanel.VirtualizationMode="Standard"
+                                                    SelectionMode="Single"
+                                                    CanUserSortColumns="True" BorderThickness="0"
+                                                    ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="250"  Header="{x:Static loc:LanguageResource.colDate}"          Binding="{Binding Columns[Date]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="75"  Header="{x:Static loc:LanguageResource.colShift}"          Binding="{Binding Columns[Shift]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="90"  Header="{x:Static loc:LanguageResource.colOrderNumber}"          Binding="{Binding Columns[WorkOrder]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="90"  Header="{x:Static loc:LanguageResource.colHeatNumber}"             Binding="{Binding Columns[Heat]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="90"  Header="{x:Static loc:LanguageResource.colDiameter}"            Binding="{Binding Columns[Diameter]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="90"  Header="{x:Static loc:LanguageResource.colThickness}"         Binding="{Binding Columns[WallThickness]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="90"  Header="{x:Static loc:LanguageResource.colSteelGrade}"        Binding="{Binding Columns[SteelGrade]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="350"  Header="{x:Static loc:LanguageResource.colPresetName}"          Binding="{Binding Columns[Preset]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="120"  Header="{x:Static loc:LanguageResource.colProperty}"            Binding="{Binding Columns[Property]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="100"  Header="{x:Static loc:LanguageResource.colValue}"            Binding="{Binding Columns[Value]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                            <DataGridTextColumn Width="350"  Header="{x:Static loc:LanguageResource.colMachine}"             Binding="{Binding Columns[Machine]}" CellStyle="{StaticResource ResourceKey=DataGridCellCenterTemplate}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+            </DockPanel>
+            <Border Grid.Row="1" Style="{StaticResource ButtonBorder}" Margin="0,2,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Style="{StaticResource ButtonStackPanel}">
+                        <Button ui:Image.Source="/Tenaris.Library.UI.Framework;Component/Images/Common/Size_16/icon_export_excel.png"   Content="{x:Static loc:LanguageResource.Btn_Export}"  Command="{Binding ExportCommand}" />
+                    </StackPanel>
+                    <Label Grid.Column="1" Content="{Binding Message}" Style="{StaticResource TableValueCell}" Foreground="#FFCC0066"/>
+                </Grid>
+            </Border>
+            <framework:BusyIndicator Grid.RowSpan="2" IsBusy="{Binding IsBusy}" Title="{x:Static loc:LanguageResource.BusyIndicator_Title}" Message="{x:Static loc:LanguageResource.BusyIndicator_Message}" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

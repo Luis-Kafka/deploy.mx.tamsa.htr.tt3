@@ -1,0 +1,49 @@
+﻿
+create VIEW [Custom].[VwSpecificationOrderHistoryComplete]
+AS	
+	SELECT  
+		idSpecification,	
+		idOrderHistory,			
+		WORKORDER AS OrderNumber,
+		PRD_FAMILY,
+		PRD_TYPE,
+		CONNECTION,
+		HT_TYPE,
+		[STG_NAME] SteelGrade,
+		[CHEMICAL_ANALYSIS_CODE] SteelCode,
+		CUSTOMER_NAME Customer,
+		ORDER_UNIT,
+		CTT,
+		MANUFACTURING_METHOD,
+		MANUFACTURING_PROCESS,
+		CAST(DIAM_OUT_I AS FLOAT) Diameter,
+		CAST(MASS_LIN_I AS FLOAT) MASS_LIN_I,
+		CAST([ORDER_TOLERANCE.MAXIMUM] AS FLOAT) TOLERANCE_MAXIMUM,
+		CAST([ORDER_TOLERANCE.MINIMUM] AS FLOAT) TOLERANCE_MINIMUM,
+		CAST([THICKNSS_I] AS FLOAT) Thickness,
+		CAST([INSP_HT_EXIT.THICKNSS_I.BCTBTM01.MINIMUM] AS FLOAT) [MinimumThickness],
+		CAST([INSP_HT_EXIT.THICKNSS_I.BCTBTM01.MAXIMUM] AS FLOAT) [MaximumThickness],
+		CAST([ORDER_U] AS FLOAT) [ORDER_U],
+		CAST([LENGTH_CUSTOMER_RNG.MAXIMUM] AS FLOAT) MaximumLength,
+		CAST([LENGTH_CUSTOMER_RNG.MINIMUM] AS FLOAT) MinimumLength,
+		PSL,
+		CAST(KgMWeight AS FLOAT) KgMWeight,
+		CAST(Ovality AS FLOAT) Ovality,
+		CAST(MinimumOvality AS FLOAT) MinimumOvality,
+		CAST(MaximumOvality AS FLOAT) MaximumOvality,
+		CAST(CYCLE_TIME AS FLOAT) CycleTime,
+		CAST(ORDER_MASS AS FLOAT) ORDER_MASS
+	FROM
+	(SELECT S.idSpecification, SC.idComponent AS idOrderHistory, A.Code, Value
+	FROM 
+		Specification.Attribute A 
+		INNER JOIN Specification.ComponentAttributeValue CV ON CV.IdAttribute = A.IdAttribute
+		INNER JOIN Specification.Component C ON C.idComponent = CV.idComponent
+		INNER JOIN Specification.ComponentType CT ON CT.idComponentType = C.idComponentType AND CT.Code = 'WORKORDER'
+		INNER JOIN Specification.SpecificationComponent SC ON SC.idComponent = C.idComponent
+		INNER JOIN Specification.Specification S ON S.idSpecification = SC.idSpecification) AS SourceTable
+	PIVOT
+	(
+		MAX(Value)
+		FOR Code IN ([WORKORDER],[PRD_FAMILY],[PRD_TYPE],[CONNECTION],[HT_TYPE],[STG_NAME],[CHEMICAL_ANALYSIS_CODE],[CUSTOMER_NAME],[ORDER_UNIT],[CTT],[MANUFACTURING_METHOD],[MANUFACTURING_PROCESS],[DIAM_OUT_I],[MASS_LIN_I],[ORDER_TOLERANCE.MAXIMUM],[ORDER_TOLERANCE.MINIMUM],[THICKNSS_I],[INSP_HT_EXIT.THICKNSS_I.BCTBTM01.MINIMUM],[INSP_HT_EXIT.THICKNSS_I.BCTBTM01.MAXIMUM],[ORDER_U],[LENGTH_CUSTOMER_RNG.MAXIMUM],[LENGTH_CUSTOMER_RNG.MINIMUM],[PSL],[KgMWeight],[Ovality],[MinimumOvality],[MaximumOvality],[CYCLE_TIME], [ORDER_MASS], [LOT_SIZE], [AUSTENIZING_PERMANENCE.MAXIMUM], [TEMPERING_PERMANENCE.MAXIMUM])
+	) AS PivotTable

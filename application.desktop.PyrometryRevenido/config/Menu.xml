@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+	<Applications>
+  		<Application>
+			<Name>INTRA/IDM/IT</Name>
+			<Description>INTRA/IDM/IT</Description>
+			<Applications>
+				<Application>
+					<Name>Workplace</Name>
+					<Description>Workplace</Description>
+					<Title>Workplace</Title>
+					<ApplicationType>Web</ApplicationType>
+					<FileName>C:\Program Files (x86)\Internet Explorer\iexplore.exe</FileName>
+					<Arguments>http://mytenaristoday.tenaris.net/</Arguments>
+					<IconPath>.\Resources\DeskManager\Tenaris.png</IconPath>
+					<IsMultiInstance>true</IsMultiInstance>
+					<IsAutorun>false</IsAutorun>
+					<Timeout>5000</Timeout>
+				</Application>
+
+				<Application>
+					<Name>IDM</Name>
+					<Description>IDM</Description>
+					<Title>IDM</Title>
+					<IsAutorun>false</IsAutorun>
+					<FileName>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</FileName>
+					<Arguments>--app=https://idm.tenaris.net/Pages/MyProcedures.aspx --start-maximized  --disable-background-mode</Arguments>
+					<UseWindowHandle>true</UseWindowHandle>
+					<WindowHandleTitle>Pages - My Procedures</WindowHandleTitle>
+					<WindowHandleClass>Chrome_WidgetWin_1</WindowHandleClass>
+					<IconPath>.\Resources\DeskManager\Tenaris.png</IconPath>
+					<IsAutoRestart>false</IsAutoRestart>
+					<MaxNotRespondingCount>5</MaxNotRespondingCount>
+					<HasHeader>true</HasHeader>
+				</Application>
+				
+				<Application>
+					<Name>Policies</Name>
+					<Description>Tenaris Quality, Health, Safety and Environment Policy</Description>
+					<Title>Tenaris Quality, Health, Safety and Environment Policy</Title>
+					<FileName>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</FileName>
+					<Arguments>https://idm.tenaris.net/sites/published/_layouts/15/Tenaris.SharePoint.IDM.WebParts/DocumentViewByCode.aspx?Code=POL00002</Arguments>
+					<UseWindowHandle>true</UseWindowHandle>
+					<WindowHandleTitle>View Document</WindowHandleTitle>
+					<WindowHandleClass>Chrome_WidgetWin_1</WindowHandleClass>
+					<IconPath>.\Resources\DeskManager\Tenaris.png</IconPath>
+					<IsAutoRestart>false</IsAutoRestart>
+					<MaxNotRespondingCount>5</MaxNotRespondingCount>
+					<HasHeader>true</HasHeader>
+				</Application>
+			   
+	<!--
+				<Application>
+					<Name>Patrones</Name>
+					<Description>Patrones</Description>
+					<Title>Patrones</Title>
+					<FileName>C:\Program Files (x86)\Internet Explorer\iexplore.exe</FileName>
+					<Arguments>http://www.apre.siderca.ot/patrones/Busqueda/pedidos.asp</Arguments>
+					<IconPath>.\Resources\DeskManager\Tenaris.png</IconPath>
+					<IsMultiInstance>true</IsMultiInstance>
+					<IsAutorun>false</IsAutorun>
+					<Timeout>5000</Timeout>
+				</Application>
+	-->
+
+	<!--		   
+				<Application>
+					<Name>TSF</Name>
+					<Description>Tenaris Shop Floor</Description>
+					<Title>Tenaris Shop Floor</Title>
+					<FileName>C:\Program Files\Internet Explorer\iexplore.exe</FileName>
+					<Arguments>http://webapps.tenaris.net/TSF</Arguments>
+					<IconPath>.\Resources\DeskManager\Tenaris.png</IconPath>
+					<IsMultiInstance>true</IsMultiInstance>
+					<IsAutorun>false</IsAutorun>
+					<Timeout>5000</Timeout>
+				</Application>
+	-->
+
+	<!--
+				<Application>
+					<Name>Outlook</Name>
+					<Description>Outlook</Description>
+					<Title>Outlook</Title>
+					<FileName>C:\Program Files (x86)\Internet Explorer\iexplore.exe</FileName>
+					<Arguments>https://mail.siderca.techint.net/</Arguments>
+					<IconPath>.\Resources\DeskManager\Mail.png</IconPath>
+					<IsMultiInstance>true</IsMultiInstance>
+					<IsAutorun>false</IsAutorun>
+					<Timeout>5000</Timeout>
+				</Application>
+	-->
+
+	<!--   
+				<Application>
+					<Name>Emulacion</Name>
+					<Description>Emulacion</Description>
+					<Title>Emulacion</Title>
+					<ApplicationType>Console</ApplicationType>
+					<HasHeader>true</HasHeader>
+					<FileName>C:\Program Files (x86)\Putty\putty.exe</FileName>
+					<Arguments>-load "SIDERCA_PROD"</Arguments>
+					<IconPath>.\Resources\DeskManager\Putty.png</IconPath>
+					<IsMultiInstance>false</IsMultiInstance>
+					<IsAutorun>false</IsAutorun>
+					<Timeout>5000</Timeout>
+				</Application>
+	-->
+			   
+				<Application>
+					<Name>Notepad</Name>
+					<Description>Notepad</Description>
+					<Title>Notepad</Title>
+					<FileName>notepad.exe</FileName>						  
+					<IsMultiInstance>true</IsMultiInstance>
+					<IsAutorun>false</IsAutorun>
+					<Timeout>5000</Timeout>
+					<AvoidStretchApplication>true</AvoidStretchApplication>
+				</Application>
+			</Applications>
+		</Application>
+
+	<!--
+		<Application>
+			<Name>CND</Name>
+			<Description>CND</Description>
+			<Title>CND</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.Ndt.View.Cerberus ResourceFolder=/Resources/NDT %AppCode%=NdtView</Arguments>
+			<IconPath>.\Resources\DeskManager\EMI.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+	   </Application>  
+	   
+		<Application>
+			<Name>Proveup1</Name>
+			<Description>Proveup1</Description>
+			<Title>Proveup1</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.Ndt.App.ProveUp ResourceFolder=/Resources/NDT %AppCode%=NdtProveup1</Arguments>
+			<IconPath>.\Resources\DeskManager\EMI.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>
+		
+		<Application>
+			<Name>Proveup2</Name>
+			<Description>Proveup2</Description>
+			<Title>Proveup2</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.Ndt.App.ProveUp ResourceFolder=/Resources/NDT %AppCode%=NdtProveup2</Arguments>
+			<IconPath>.\Resources\DeskManager\EMI.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>  
+		<Application>
+			<Name>Entrada</Name>
+			<Description>Entrada</Description>
+			<Title>Entrada</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.AutoAr.View.Entrance %AppCode%=EntranceView</Arguments>
+			<IconPath>.\Resources\DeskManager\Entry.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>  
+	-->
+
+		<Application>
+			<Name>Tracking</Name>
+			<Description>Tracking</Description>
+			<Title>Tracking</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.Tracking %AppCode%=TrackingView</Arguments>
+			<IconPath>.\Resources\DeskManager\Tracking.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>  
+		<Application>
+			<Name>EQuipment Alarms</Name>
+			<Description>EQuipment Alarms</Description>
+			<Title>EQuipment Alarms</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.Alarm %AppCode%=AlarmView</Arguments>
+			<IconPath>.\Resources\DeskManager\EquipmentAlarms.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>
+	<!--
+		<Application>
+			<Name>Panel de Alarmas</Name>
+			<Description>Panel de Alarmas</Description>
+			<Title>Panel de Alarmas</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.AlarmPanel %AppCode%=AlarmPanel ResourceFolder=/Resources/AlarmPanel</Arguments>
+			<IconPath>.\Resources\DeskManager\EquipmentAlarms.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>
+	-->
+		<Application>
+			<Name>DownTimes</Name>
+			<Description>DownTimes</Description>
+			<Title>DownTimes</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.Interruption %AppCode%=InterruptionView ResourceFolder=/Resources/Interruption</Arguments>
+			<IconPath>.\Resources\DeskManager\Interruptions.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>     
+		<Application>
+			<Name>Presets</Name>
+			<Description>Presets</Description>
+			<Title>Presets</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.Preset %AppCode%=PresetView ResourceFolder=/Resources/Preset</Arguments>
+			<IconPath>.\Resources\DeskManager\Presets.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application> 
+		<Application>
+			<Name>Production</Name>
+			<Description>Production</Description>
+			<Title>Production</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.Production %AppCode%=ProductionView ResourceFolder=/Resources/Production</Arguments>
+			<IconPath>.\Resources\DeskManager\Production.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>  
+	<!--
+		<Application>
+			<Name>Salida</Name>
+			<Description>Salida</Description>
+			<Title>Salida</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.AutoAr.View.Exit %AppCode%=ExitView</Arguments>
+			<IconPath>.\Resources\DeskManager\Exit.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>  
+	-->
+
+	<!--
+		<Application>
+			<Name>Especificacion</Name>
+			<Description>Especificacion</Description>
+			<Title>Especificacion</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.Siderca.Program.Specification %AppCode%=SpecificationView</Arguments>
+			<IconPath>.\Resources\DeskManager\Tenaris.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>
+	-->
+
+		<Application>
+			<Name>Tda</Name>
+			<Description>Tda</Description>
+			<Title>Tda</Title>
+			<IsAutorun>false</IsAutorun>
+			<HasHeader>false</HasHeader>
+			<FileName>Tenaris.Library.Shell.exe</FileName>
+			<Arguments>Assembly=Tenaris.View.Tda %AppCode%=TdaView</Arguments>
+			<IconPath>.\Resources\DeskManager\TDA.png</IconPath>
+			<IsAutoRestart>false</IsAutoRestart>
+		</Application>
+	</Applications>
+  
+	<Leds></Leds>
+
+	<Plugins>
+		<Tenaris.View.Desktop.Plugin.HelpPlugin Assembly="Binaries\Tenaris.View.Desktop.Plugin.HelpPlugin.dll">
+			<Name>HelpPlugin</Name>
+			<Description>Tenaris Help Plugin</Description>
+			<IconPath>.\Resources\DeskManager\Help.png</IconPath>
+		</Tenaris.View.Desktop.Plugin.HelpPlugin> 
+
+		<Tenaris.View.Desktop.Plugin.AlarmPlugin Assembly="Binaries\Tenaris.View.Desktop.Plugin.AlarmPlugin.dll">
+			<Name>OPERAlarmPlugin</Name>
+			<Description>Operative alarms</Description>
+			<ResourceDirectory>Resources\Alarm</ResourceDirectory>
+			<ZoneCode>ALL</ZoneCode>
+			<GroupCode>PROD</GroupCode>
+			<OpenApplicationName>Operative alarmas</OpenApplicationName>
+		</Tenaris.View.Desktop.Plugin.AlarmPlugin> 
+		
+		<Tenaris.View.Desktop.Plugin.Message.Plugin Assembly="Binaries\Tenaris.View.Desktop.Plugin.Message.dll">
+			<Name>Message</Name>
+			<Description>Mensajes</Description>
+			<IconPath>.\Resources\DeskManager\Messages-blank.png</IconPath>
+			<ResourceDirectory>Resources\DeskManager</ResourceDirectory>
+			<ZoneCode>ALL</ZoneCode>
+		</Tenaris.View.Desktop.Plugin.Message.Plugin>		
+
+	</Plugins>
+</Menu>

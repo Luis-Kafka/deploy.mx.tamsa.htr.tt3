@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="System.Windows.Controls.UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dialogs="clr-namespace:Tenaris.AutoAr.View.Tracking.MarkPipeDialog;assembly=Tenaris.AutoAr.View.Tracking.MarkPipeDialog"
+             >
+    <Grid>
+        <dialogs:DialogMark Tracking="{Binding Tracking}" ZoneInfo="{Binding ZoneInfo}"  ZoneConfig="{Binding ZoneConfig}" Width="1000" />
+    </Grid>
+</UserControl>

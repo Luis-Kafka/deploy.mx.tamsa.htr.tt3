@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Resources="clr-namespace:Tenaris.View.Interruption.LanguageResource;assembly=Tenaris.View.Interruption.LanguageResource"
+                    xmlns:control="clr-namespace:Tenaris.Library.UI.Framework;assembly=Tenaris.Library.UI.Framework"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Tenaris.View.Interruption;component/Resources/ApplicationResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <DataTemplate x:Key="CustomFilterTemplate">
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Order" Margin="1" Style="{StaticResource TableItemCell}" Grid.Column="1" Height="Auto" Padding="0"></Label>
+            <TextBox Grid.Column="2" Margin="1" Text="{Binding Path=DynamicFilters[OrderNumber], Mode=TwoWay, Converter={StaticResource converter}}" FontWeight="Bold"/>
+            <Label Content="Heat" Margin="1" Style="{StaticResource TableItemCell}" Grid.Column="3" Height="Auto"></Label>
+            <TextBox Grid.Column="4" Margin="1" Text="{Binding Path=DynamicFilters[HeatNumber], Mode=TwoWay, Converter={StaticResource converter}}" FontWeight="Bold"/>
+            <Label Content="" Margin="1" Style="{StaticResource TableItemCell}" Grid.Column="5" Height="Auto"></Label>
+            <Label Content="" Margin="1" Style="{StaticResource TableItemCell}" Grid.Column="6" Height="Auto"></Label>
+        </Grid>-->
+    </DataTemplate>
+
+</ResourceDictionary>
+    

@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="System.Windows.Controls.UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:diagcontrols="clr-namespace:Tenaris.View.Tracking.Dialogs.Controls;assembly=Tenaris.View.Tracking.Dialogs"
+             xmlns:dialogs="clr-namespace:Tenaris.View.Tracking.Dialogs;assembly=Tenaris.View.Tracking.Dialogs"
+			 xmlns:controls="clr-namespace:Tenaris.View.Tracking.Controls;assembly=Tenaris.View.Tracking.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <controls:ZoomGrid Name="GridGeneral" ZoomCanvas="{Binding ElementName=CanvasGeneral}" MaxZoom="10" DeltaZoom="0.25" >
+	
+		<controls:ZoomCanvas x:Name="CanvasGeneral" Width="1200" Height="400" >
+		
+			<Image Width="1200" Height="400"  Source="pack://siteoforigin:,,,/Resources/Tracking/HT1-GeneralMimicHistory.jpg" Panel.ZIndex="0" Stretch="Fill" />
+
+        <diagcontrols:HistoryTrackingFlow TrackingHistory="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dialogs:DialogHistory}}, Path=TrackingHistory}"
+										  LineColor="Red" LineThickness="3">
+            <diagcontrols:HistoryTrackingFlow.Zones>
+				
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A1-RCO01" 		X="631" 	Y="106" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A1-RCO02" 		X="850" 	Y="106" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A1-RTB01" 		X="850" 	Y="104" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A1-RCO03" 		X="850" 	Y="101" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A1-TCN01" 		X="850" 	Y="96" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A1-USD01" 		X="850" 	Y="109" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A2-RCO04" 		X="1064" 	Y="101" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A2-WBM01" 		X="1064" 	Y="105" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A2-RCO05" 		X="1064" 	Y="175" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-RCO06_07" 		X="911" 	Y="175" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-RCO08" 		X="631" 	Y="175" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-RTB02" 		X="631" 	Y="172" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-RCO09" 		X="631" 	Y="170" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-USD02" 		X="631" 	Y="178" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-RCO10" 		X="403" 	Y="175" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-RTB03" 		X="398" 	Y="169" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+A3-ICN01" 		X="403" 	Y="184" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B1-RCO11_12_13" 	X="403" 	Y="221" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B2-RCO14" 		X="843" 	Y="221" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B2-WBM02" 		X="843" 	Y="223" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B2-WBM03" 		X="843" 	Y="282" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B2-RCO15" 		X="843" 	Y="341" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B2-RCO16" 		X="579" 	Y="341" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+B2-RCO17_18" 		X="579" 	Y="347" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C1-ICN03" 		X="400" 	Y="352" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C1-CHA01" 		X="400" 	Y="373" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C1-CHA02" 		X="191" 	Y="373" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C1-ICN04" 		X="191" 	Y="372" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C1-RCO20" 		X="178" 	Y="347" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C1-RTB04" 		X="178" 	Y="341" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+C2-ICN05_06" 		X="178" 	Y="336" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D1-TCN02_ENT" 	X="178" 	Y="128" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D1-TCN02" 		X="178" 	Y="116" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D1-RCO22" 		X="178" 	Y="98" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D1-TCN03" 		X="185" 	Y="96" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D1-RCO23" 		X="186" 	Y="53" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D2-RCO24" 		X="411"		Y="53" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D2-USD03" 		X="411" 	Y="50" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D2-TCN04" 		X="434" 	Y="55" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D2-RCO25" 		X="434" 	Y="69" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D2-RCO26" 		X="434" 	Y="72" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D2-USD04" 		X="434" 	Y="74" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D3-RCO27" 		X="629" 	Y="72" />
+					<diagcontrols:HistoryZonePoint ZoneCode="=120+D3-ICN07_08_09"	X="629" 	Y="65" />
+					
+            </diagcontrols:HistoryTrackingFlow.Zones>
+        </diagcontrols:HistoryTrackingFlow>
+			
+		</controls:ZoomCanvas>
+	
+		<controls:ZoomHandler ZoomControl="{Binding ElementName=GridGeneral}" Margin="10,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+	
+	</controls:ZoomGrid>
+
+</UserControl>

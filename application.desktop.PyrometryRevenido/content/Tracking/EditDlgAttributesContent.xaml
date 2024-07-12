@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="System.Windows.Controls.UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="clr-namespace:Tenaris.Library.UI.Framework;assembly=Tenaris.Library.UI.Framework"
+             xmlns:images="clr-namespace:Tenaris.Library.UI.Framework.Resources.Images.Common;assembly=Tenaris.Library.UI.Framework"
+             xmlns:dialogs="clr-namespace:Tenaris.View.Tracking.Dialogs;assembly=Tenaris.View.Tracking.Dialogs">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
+			<ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <!--
+		<Label Grid.Row="0" Grid.Column="0" Content="{Binding Attributes[TempSample].Description}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <TextBox  Grid.Row="0" Grid.Column="1"  Text="{Binding Attributes[TempSample].Value}"></TextBox>
+		
+		<Label Grid.Row="1" Grid.Column="0" Content="{Binding Attributes[Observations].Description}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+		<TextBox  Grid.Row="1" Grid.Column="1"  Text="{Binding Attributes[Observations].Value}"></TextBox>
+		
+		<Label Grid.Row="2" Grid.Column="0" Content="{Binding Attributes[STEEL_GRADE].Description}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+		<TextBox  Grid.Row="2" Grid.Column="1"  Text="{Binding Attributes[STEEL_GRADE].Value}"></TextBox>
+		
+		<Label Grid.Row="3" Grid.Column="0" Content="{Binding Attributes[PPF].Description}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+		<TextBox  Grid.Row="3" Grid.Column="1"  Text="{Binding Attributes[PPF].Value}"></TextBox>
+		
+		<Label Grid.Row="4" Grid.Column="0" Content="{Binding Attributes[HeatNumber].Description}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <TextBox  Grid.Row="4" Grid.Column="1"  Text="{Binding Attributes[HeatNumber].Value}"></TextBox>
+		
+		<Label Grid.Row="5" Grid.Column="0" Content="{Binding Attributes[OrderNumber].Description}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+		<TextBox  Grid.Row="5" Grid.Column="1"  Text="{Binding Attributes[OrderNumber].Value}"></TextBox>
+		
+		<Label Grid.Row="2" Grid.Column="0" Content="{Binding Attributes[HAS_SAMPLE].Name}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding Attributes[HAS_SAMPLE].Value}">
+        </CheckBox>
+
+		<Label Grid.Row="1" Grid.Column="0" Content="{Binding Attributes[SAMPLE_TYPES].Name}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Attributes[SAMPLE_TYPES].Value}">
+        </TextBox>
+		
+		<Label Grid.Row="2" Grid.Column="0" Content="{Binding Attributes[EtrackStatusWMS].Name}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Attributes[EtrackStatusWMS].Value}">
+        </TextBox>		
+
+		<Label Grid.Row="3" Grid.Column="0" Content="{Binding Attributes[IsCamThrIdentified].Name}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding Attributes[IsCamThrIdentified].Value}">
+        </CheckBox>		
+
+		<Label Grid.Row="4" Grid.Column="0" Content="{Binding Attributes[IsCamWmsIdentified].Name}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <CheckBox Grid.Row="4" Grid.Column="1" IsChecked="{Binding Attributes[IsCamWmsIdentified].Value}">
+        </CheckBox>		
+
+		<Label Grid.Row="5" Grid.Column="0" Content="{Binding Attributes[IsFromUnbundle].Name}" Style="{StaticResource ResourceKey=TableItemCell}"></Label>
+        <CheckBox Grid.Row="5" Grid.Column="1" IsChecked="{Binding Attributes[IsFromUnbundle].Value}" >
+        </CheckBox>	-->
+    </Grid>
+</UserControl>

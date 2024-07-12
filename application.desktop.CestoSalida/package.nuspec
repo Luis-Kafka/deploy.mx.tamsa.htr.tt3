@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Tenaris.Bundle.MX.HTR.TT3.CestoSalida</id>
+    <version>1.0.0</version>
+    <description>Desktop application bundle for HTR TT3 Cesto Salida Pulpit.</description>
+    <authors>Tenaris</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Tenaris 2023</copyright>
+    <language>es-Mx</language>
+    <dependencies>
+	  <dependency id="Tenaris.Service.Security" version="[4.2.2]" />
+      <dependency id="Tenaris.Library.Shell" version="[4.1.0]" />
+      <dependency id="Tenaris.Library.Transactions.Sink" version="[4.1.0]" />
+      <dependency id="Tenaris.Service.Security.Sink" version="[4.2.2]" />
+      <dependency id="Tenaris.View.Desktop" version="[4.2.2]" />
+      <dependency id="Tenaris.View.Desktop.Plugin.HelpPlugin" version="[4.2.2]" />
+      <dependency id="Tenaris.View.Alarm" version="[4.2.0]" />
+      <dependency id="Tenaris.View.Interruption" version="[4.2.5]" />
+      <dependency id="Tenaris.Manager.Command.Shared" version="[4.1.3]" />
+      <dependency id="Tenaris.View.Tracking" version="[4.2.0]" />
+      <dependency id="Tenaris.Service.Specification.Client" version="[4.1.0]" />
+      <dependency id="Tenaris.Service.Specification.Shared" version="[4.1.0]"/>
+      <dependency id="Tenaris.View.Desktop.Plugin.AlarmPlugin" version="[4.2.0]" />
+	  <dependency id="Tenaris.AutoAr.View.Tracking.EditDialog" version="[4.1.0]"/>
+	  <dependency id="Tenaris.AutoAr.View.Tracking.InsertDialog" version="[4.1.0]"/>
+	  <dependency id="Tenaris.AutoAr.View.Tracking.MarkPipeDialog" version="[4.1.0]"/>
+	  <dependency id="Tenaris.View.Desktop.Plugin.Message" version="[4.1.1]"/>
+	  <dependency id="Tenaris.Tamsa.Scheduler.View" version="[4.1.0]"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="app_data.json" target="app_data.json" />
+    <file src="config\*.*" target="config" />
+    <file src="content\**\*.*" target="content" />
+    <file src="tools\package.install.ps1" target="tools\package.install.ps1" />
+    <file src="tools\package.update.ps1" target="tools\package.update.ps1" />
+    <file src="tools\package.uninstall.ps1" target="tools\package.uninstall.ps1" />
+  </files>
+</package>

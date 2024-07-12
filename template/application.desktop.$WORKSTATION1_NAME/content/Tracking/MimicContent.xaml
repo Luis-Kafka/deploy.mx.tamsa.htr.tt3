@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="System.Windows.Controls.UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:Tenaris.View.Tracking.Controls;assembly=Tenaris.View.Tracking.Controls"
+             d:DesignHeight="4122" d:DesignWidth="5664">
+   
+    <TabControl>
+
+        <TabItem Header="AUSTENITIZING" >
+
+            <DockPanel>
+
+				<controls:HeaderDetail x:Name="HeaderGeneral" DockPanel.Dock="Top"  HorizontalAlignment="Stretch" ClassName="Tenaris.View.Tracking.DynamicHeader.Header, Tenaris.View.Tracking.DynamicHeader" />
+
+                <controls:ZoomGrid Name="GridGeneral" ZoomCanvas="{Binding ElementName=CanvasGeneral}" MaxZoom="10" DeltaZoom="0.25">
+
+                    <controls:ZoomCanvas x:Name="CanvasGeneral" Width="5664" Height="4122" >
+
+                        
+                    </controls:ZoomCanvas>
+
+                    <controls:ZoomHandler ZoomControl="{Binding ElementName=GridGeneral}"
+                                          Margin="10,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+
+                </controls:ZoomGrid>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</UserControl>

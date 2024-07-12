@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">12.0</VisualStudioVersion>
+    <PostConversionRemoveFromScc>
+    </PostConversionRemoveFromScc>
+    <PostConversionAddToScc>
+    </PostConversionAddToScc>
+    <PostConversionCheckOutFromScc>
+    </PostConversionCheckOutFromScc>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <AssemblyName>Tenaris.Database.L2.Custom.Schema</AssemblyName>
+    <DacApplicationName>Tenaris.Database.L2.Custom.Schema</DacApplicationName>
+    <DacVersion>4.1.0.0</DacVersion>
+    <ProjectGuid>{38db6e5b-ada9-4fdc-8d42-14e7ba0acbeb}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>Tenaris.Database.L2.Custom.Schema</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ShowWizard>False</ShowWizard>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <LoadSqlClrTypes>True</LoadSqlClrTypes>
+    <RootNamespace>Tenaris.Database.L2.Custom.Schema</RootNamespace>
+    <DefaultSchema>dbo</DefaultSchema>
+    <PreviousProjectVersion>4.1</PreviousProjectVersion>
+    <ValidateCasingOnIdentifiers>False</ValidateCasingOnIdentifiers>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <GenerateDatabaseFile>False</GenerateDatabaseFile>
+    <GenerateCreateScript>False</GenerateCreateScript>
+    <TargetLanguage>CS</TargetLanguage>
+    <AllowSnapshotIsolation>True</AllowSnapshotIsolation>
+    <AnsiNullDefault>True</AnsiNullDefault>
+    <AnsiNulls>True</AnsiNulls>
+    <AnsiPadding>True</AnsiPadding>
+    <AnsiWarnings>True</AnsiWarnings>
+    <ArithAbort>True</ArithAbort>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <AutoUpdateStatisticsAsynchronously>True</AutoUpdateStatisticsAsynchronously>
+    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <CompatibilityMode>110</CompatibilityMode>
+    <ConcatNullYieldsNull>True</ConcatNullYieldsNull>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultCursor>LOCAL</DefaultCursor>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <EnableFullTextSearch>False</EnableFullTextSearch>
+    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
+    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
+    <IsChangeTrackingOn>False</IsChangeTrackingOn>
+    <IsEncryptionOn>False</IsEncryptionOn>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <PageVerify>NONE</PageVerify>
+    <Parameterization>SIMPLE</Parameterization>
+    <QuotedIdentifier>True</QuotedIdentifier>
+    <ReadCommittedSnapshot>True</ReadCommittedSnapshot>
+    <Recovery>SIMPLE</Recovery>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
+    <SupplementalLoggingOn>False</SupplementalLoggingOn>
+    <TornPageDetection>False</TornPageDetection>
+    <Trustworthy>False</Trustworthy>
+    <UpdateOptions>READ_WRITE</UpdateOptions>
+    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetDatabase>
+    </TargetDatabase>
+    <TreatTSqlWarningsAsErrors>False</TreatTSqlWarningsAsErrors>
+    <SuppressTSqlWarnings />
+    <SqlTargetName>Tenaris.Database.L2.Custom.Schema</SqlTargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetDatabase>Tenaris.Database.L2.Custom.Schema</TargetDatabase>
+    <TreatTSqlWarningsAsErrors>False</TreatTSqlWarningsAsErrors>
+    <SuppressTSqlWarnings />
+    <DBSchemaFileName>Tenaris.Database.L2.Custom.Schema</DBSchemaFileName>
+    <DeployScriptFileName>Custom.Schema.sql</DeployScriptFileName>
+    <SqlTargetName>Tenaris.Database.L2.Custom.Schema</SqlTargetName>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <!--Import the settings-->
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" Condition="'$(SQLDBExtensionsRefPath)' == ''" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Pre-Deployment" />
+    <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="Data Generation Plans" />
+    <Folder Include="Properties\" />
+    <Folder Include="Schema Objects" />
+    <Folder Include="Schema Objects\Schemas" />
+    <Folder Include="Schema Compare" />
+    <Folder Include="Security\" />
+    <Folder Include="Schema Objects\Schemas\dbo" />
+    <Folder Include="Schema Objects\Schemas\dbo\Stored Procedures" />
+    <Folder Include="Schema Objects\Schemas\Custom" />
+    <Folder Include="Schema Objects\Schemas\Custom\Functions" />
+    <Folder Include="Schema Objects\Schemas\Custom\Stored Procedures" />
+    <Folder Include="Schema Objects\Schemas\Custom\Tables" />
+    <Folder Include="Schema Objects\Schemas\Custom\User Defined Types" />
+    <Folder Include="Schema Objects\Schemas\Custom\Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <BuildContributorArgument Include="OutDir=$(OutDir)" />
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Command.Schema.4.1.3\lib\net40\Tenaris.Database.L2.Command.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Command.Schema.4.1.3\lib\net40\Tenaris.Database.L2.Command.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Handshake.Schema.4.2.0\lib\net40\Tenaris.Database.L2.Handshake.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Handshake.Schema.4.2.0\lib\net40\Tenaris.Database.L2.Handshake.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Tracking.Schema.4.2.1\lib\net40\Tenaris.Database.L2.Tracking.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Tracking.Schema.4.2.1\lib\net40\Tenaris.Database.L2.Tracking.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Production.Schema.4.3.1\lib\net40\Tenaris.Database.L2.Production.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Production.Schema.4.3.1\lib\net40\Tenaris.Database.L2.Production.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Preset.Schema.4.3.2\lib\net40\Tenaris.Database.L2.Preset.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Preset.Schema.4.3.2\lib\net40\Tenaris.Database.L2.Preset.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Tda.Schema.4.1.3\lib\net40\Tenaris.Database.L2.Tda.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Tda.Schema.4.1.3\lib\net40\Tenaris.Database.L2.Tda.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Interruption.Schema.4.2.4\lib\net40\Tenaris.Database.L2.Interruption.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Interruption.Schema.4.2.4\lib\net40\Tenaris.Database.L2.Interruption.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Alarm.Schema.4.2.0\lib\net40\Tenaris.Database.L2.Alarm.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Alarm.Schema.4.2.0\lib\net40\Tenaris.Database.L2.Alarm.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Diagnostic.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Diagnostic.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Diagnostic.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Diagnostic.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Security.Schema.4.2.2\lib\net40\Tenaris.Database.L2.Security.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Security.Schema.4.2.2\lib\net40\Tenaris.Database.L2.Security.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Quality.Schema.4.3.1\lib\net40\Tenaris.Database.L2.Quality.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Quality.Schema.4.3.1\lib\net40\Tenaris.Database.L2.Quality.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Shift.Schema.4.3.0\lib\net40\Tenaris.Database.L2.Shift.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Shift.Schema.4.3.0\lib\net40\Tenaris.Database.L2.Shift.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Event.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Event.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Event.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Event.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Schedule.Schema.4.3.0\lib\net40\Tenaris.Database.L2.Schedule.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Schedule.Schema.4.3.0\lib\net40\Tenaris.Database.L2.Schedule.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Configuration.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Configuration.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Configuration.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Configuration.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Wedjet.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Wedjet.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Wedjet.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Wedjet.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.TrackingView.Schema.4.2.0\lib\net40\Tenaris.Database.L2.TrackingView.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.TrackingView.Schema.4.2.0\lib\net40\Tenaris.Database.L2.TrackingView.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.AUSStudio.Schema.4.1.0\lib\net45\Tenaris.Database.L2.AUSStudio.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.AUSStudio.Schema.4.1.0\lib\net45\Tenaris.Database.L2.AUSStudio.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Interruption.Plugin.Schema.4.2.4\lib\net40\Tenaris.Database.L2.Interruption.Plugin.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Interruption.Plugin.Schema.4.2.4\lib\net40\Tenaris.Database.L2.Interruption.Plugin.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Scripting.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Scripting.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Scripting.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Scripting.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Message.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Message.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Message.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Message.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Permissions.sql" />
+    <None Include="Project.scons" />
+    <None Include="Properties\Database.sqlcmdvars" />
+    <None Include="Properties\Database.sqldeployment" />
+    <None Include="Properties\Database.sqlpermissions" />
+    <None Include="Properties\Database.sqlsettings" />
+    <Build Include="Schema Objects\Schemas\dbo\Stored Procedures\RebuildOrReorganizeIndexesOnline.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetSplittedString.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetSubZoneFromTag.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetTrackingHslColorId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetTrackingPassAttributeId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetTrackingSpecificationAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetTrackingSpecificationAttributeId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSSkipTableFromConfiguration.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\InterruptionFSGetFolio.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\PresetFSGetCriterionSQLExpression.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\PresetFSGetPresetSQLExpression.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\ProductionFSGetBatchDisplayName.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\ProductionFSGetMachineSortOrder.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\ProductionGetCounters.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\DoConfigDefineTrackingHslColor.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\DoConfigDefineTrackingPassAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\DoConfigDefineTrackingSpecificationAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\InsTrackingPassAttributeHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\InterruptionPluginGetInterruptionCode.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\PresetGetExtendedCatalogValues.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\PresetGetPresetCatalogChanged.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionGetEntranceMachineFutureBatch.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionGetMachineBatchCustomAttributes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionGetMachineBatchRemainingCount.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionGetMachineFutureBatch.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionGetRecentKeysOfMachine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionGetRecentMachineBatchesOfMachine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionUpdBatchStatus.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionUpdCounters.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionViewGetCenterMachineBatches.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionViewGetChangeProductBatchMachines.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionViewGetDynamicFilters.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionViewGetHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ProductionViewGetHistoryByProduct.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\QualityInsHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TdaGetHeaderSpecification.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TechAlarmGetDestinations.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TechAlarmGetQualityCodes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetAttributeValue.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetHslColorAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetItemStatus.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetProductionHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetSpecificationAttributes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetTdaValue.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetTraceabilityData.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetTrackingAttributes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetTrackingInZone.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetTrackingPass.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingStarterGetAttributes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetEditTrackingAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetIdSpecification.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetIssueHistoryAttributes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetMachineLastTrackingPass.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetMachinesLastTrackingPass.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetOfflineTracking.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetPipesProgram.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetQualityCodeDestinations.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetQualityMachineCodes.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetQualityMachineDestinations.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetQualityMachines.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetTechAlarms.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetTrackingQualityHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingViewGetTrackingQualityHistoryByMachine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\TrackingHslColor.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\TrackingHslColorHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\TrackingPassAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\TrackingPassAttributeHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\TrackingSpecificationAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\User Defined Types\TPresetSpecificationAttributeValue.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigPkTrackingHslColor.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigPkTrackingPassAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigPkTrackingSpecificationAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigTrackingHslColor.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigTrackingPassAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigTrackingSpecificationAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwTdaTrendHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwTrackingHslColor.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwTrackingHslColorAll.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwTrackingHslColorHistory.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwTrackingSpecificationAttribute.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwTrackingSpecificationAttributeAll.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwSpecificationOrderHistoryComplete.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwSpecificationHeatHistoryComplete.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\User Defined Types\TTrackingPass.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetProductionNormalizedCycleTime.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetQualityRequiredApplicationId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetTrackingZoneId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FTInterruptionPluginGetInterruptionsClose.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\DoConfigDefineQualityRequiredApplication.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\DoConfigDefineTrackingZone.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetDataEx2Example.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\QualityRequiredApplication.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\QualityTrackingPassStatus.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\TrackingZone.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigPkQualityRequiredApplication.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigPkTrackingZone.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigQualityRequiredApplication.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigTrackingZone.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwQualityRequiredApplication.sql" />
+    <None Include="Schema Objects\Schemas\Custom\Custom.sql" />
+    <None Include="Scripts\Pre-Deployment\Script.SetTransactionsIsolationLevel.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetMachineId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\DoConfigDefineMachine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\Machine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Tables\QualityDestination.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigMachine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwConfigPkMachine.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwSpecification.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwSpecificationProductHistoryComplete.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Views\VwSpecificationWorkorderHistoryComplete.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\PresetGetDBLowerValue.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\PresetGetDBUpperValue.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TdaGetTagValues.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSGetCancelTrackingPassMissingCount.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSInterruptionPluginGetCycleTime.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\FSInterruptionPluginGetInterruptionCode.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TdaGetProductId.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\SecuritySetUserDefaults.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ScriptingSendMessages.sql" />
+    <Build Include="Security\db_roles.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Functions\AlarmFSGetAlarmWorkingReference.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\TrackingGetData2.sql" />
+    <Build Include="Schema Objects\Schemas\Custom\Stored Procedures\ShiftGetCalcShiftDate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="DataPath">
+      <DefaultValue>
+      </DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="LogPath">
+      <DefaultValue>
+      </DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="master">
+      <DefaultValue>master</DefaultValue>
+      <Value>$(SqlCmdVar__3)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema Objects\Schemas\.keep" />
+    <None Include="Schema Compare\UpdateProject.scmp" />
+    <None Include="Schema Compare\UpdateDB.scmp" />
+    <None Include="README.txt" />
+    <None Include="Custom.Schema.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Common.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Common.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Common.Schema.4.1.1\lib\net40\Tenaris.Database.L2.Common.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.Specification.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Specification.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.Specification.Schema.4.1.0\lib\net40\Tenaris.Database.L2.Specification.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.TechAlarm.Schema.4.1.0\lib\net40\Tenaris.Database.L2.TechAlarm.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.TechAlarm.Schema.4.1.0\lib\net40\Tenaris.Database.L2.TechAlarm.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.ProductionView.Schema.4.2.1\lib\net40\Tenaris.Database.L2.ProductionView.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.ProductionView.Schema.4.2.1\lib\net40\Tenaris.Database.L2.ProductionView.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\packages\Tenaris.Database.L2.PresetCatalog.Schema.4.1.1\lib\net40\Tenaris.Database.L2.PresetCatalog.Schema.dacpac">
+      <HintPath>..\..\..\packages\Tenaris.Database.L2.PresetCatalog.Schema.4.1.1\lib\net40\Tenaris.Database.L2.PresetCatalog.Schema.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AssemblyVersionInfo.Template.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+</Project>

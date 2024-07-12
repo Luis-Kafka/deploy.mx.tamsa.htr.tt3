@@ -1,0 +1,5 @@
+Import('env')
+
+env.StdMSBuildTool('Custom.Schema.sqlproj')
+env.NuGetPack('Custom.Schema.sqlproj')
+
