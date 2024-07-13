@@ -21,6 +21,7 @@
       <dependency id="Tenaris.View.Desktop.Plugin.AlarmPlugin" version="[4.2.0]" />
 	  <dependency id="Tenaris.View.Desktop.Plugin.Message" version="[4.1.1]"/>
 	  <dependency id="Tenaris.HTR.View.Pyrometry" version="[4.4.0]" />
+	  <dependency id="Tenaris.HTR.Manager.Pyrometry" version="[4.4.0]" />
     </dependencies>
   </metadata>
   <files>

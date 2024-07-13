@@ -34,6 +34,8 @@
 	  <dependency id="Tenaris.View.Preset" version="[4.3.1]" />
       <dependency id="Tenaris.View.Tda" version="[4.1.3]" />
 	  <dependency id="Tenaris.HTR.View.Pyrometry" version="[4.4.0]" />
+	  <dependency id="Tenaris.HTR.Manager.Pyrometry" version="[4.4.0]" />
+	  <dependency id="Tenaris.Manager.Tda" version="[4.1.3]" />
     </dependencies>
   </metadata>
   <files>

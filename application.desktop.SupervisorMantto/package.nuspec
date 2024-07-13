@@ -28,6 +28,7 @@
 	  <dependency id="Tenaris.View.Desktop.Plugin.Message" version="[4.1.1]"/>
 	  <dependency id="Tenaris.Tamsa.Scheduler.View" version="[4.1.0]"/>
 	  <dependency id="Tenaris.View.Tda" version="[4.1.3]" />
+	  <dependency id="Tenaris.Manager.Tda" version="[4.1.3]" />
     </dependencies>
   </metadata>
   <files>

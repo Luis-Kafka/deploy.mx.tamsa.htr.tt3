@@ -38,6 +38,7 @@
 	  <dependency id="Tenaris.View.Production" version="[4.2.1]" />
 	  <dependency id="Tenaris.HTR.View.Pyrometry" version="[4.4.0]" />
 	  <dependency id="Tenaris.HTR.Manager.Pyrometry" version="[4.4.0]" />
+	  <dependency id="Tenaris.Manager.Tda" version="[4.1.3]" />
     </dependencies>
   </metadata>
   <files>
